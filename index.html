@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>$SWIF (Sample) — Official Meme Coin Site</title>
+  <meta name="description" content="Official site for $SWIF (Sample). Contract, live chart, how to buy, and community links." />
+  <meta property="og:title" content="$SWIF (Sample) — Official Meme Coin Site" />
+  <meta property="og:description" content="Contract, live chart, how to buy, and community links." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta name="theme-color" content="#0b0f19" />
+
+  <!-- Tailwind CDN (fastest for a quick static site) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --brand:#7c3aed; --brand2:#06b6d4; }
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.04); }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/85 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2 font-bold text-xl">
+        <span class="inline-block h-8 w-8 rounded-xl bg-gradient-to-br from-[var(--brand)] to-[var(--brand2)]"></span>
+        <span>$SWIF</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a href="#how" class="hover:text-white">How to Buy</a>
+        <a href="#chart" class="hover:text-white">Chart</a>
+        <a href="#tokenomics" class="hover:text-white">Tokenomics</a>
+        <a href="#team" class="hover:text-white">Team</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a id="tradeJup" target="_blank" rel="noopener" class="rounded-xl px-4 py-2 bg-[var(--brand)] hover:opacity-90 transition">Trade</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 opacity-25" aria-hidden="true">
+      <div class="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-[var(--brand)] blur-3xl"></div>
+      <div class="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-[var(--brand2)] blur-3xl"></div>
+    </div>
+
+    <div class="mx-auto max-w-7xl px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div class="space-y-6">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+          The <span class="bg-gradient-to-r from-[var(--brand)] to-[var(--brand2)] bg-clip-text text-transparent">Sheep Wif Hat</span> you can actually trade.
+        </h1>
+        <p class="text-slate-300 text-lg">Ultra-simple. No promises, no roadmaps carved in stone, just vibes and memes. DYOR.</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#how" class="rounded-xl px-5 py-3 bg-white text-slate-900 font-semibold hover:opacity-90">How to Buy</a>
+          <a href="#chart" class="rounded-xl px-5 py-3 border border-slate-700 hover:bg-slate-900">Live Chart</a>
+        </div>
+        <div class="mt-4 glass rounded-xl p-4 border border-slate-800">
+          <div class="text-xs uppercase tracking-wide text-slate-400">Contract Address</div>
+          <div class="mt-1 flex items-center gap-2">
+            <code id="contract" class="text-sm break-all">9hdynudAhhWzuNFAnpz7NjvdKMfh9z8mcZKNYHuAUgJQ</code>
+            <button id="copyBtn" class="ml-auto rounded-lg px-3 py-1.5 text-xs border border-slate-700 hover:bg-slate-900">Copy</button>
+          </div>
+        </div>
+        <div class="flex gap-4 text-slate-400">
+          <a id="xLink" target="_blank" class="hover:text-white" rel="noopener" aria-label="X/Twitter">X</a>
+          <a id="tgLink" target="_blank" class="hover:text-white" rel="noopener" aria-label="Telegram">Telegram</a>
+          <a id="birdeyeLink" target="_blank" class="hover:text-white" rel="noopener" aria-label="Birdeye">Birdeye</a>
+          <a id="dexscreenerLink" target="_blank" class="hover:text-white" rel="noopener" aria-label="DexScreener">DexScreener</a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="rounded-3xl border border-slate-800 bg-slate-900/40 p-6">
+          <div class="aspect-video w-full rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center text-slate-400">
+            <!-- Placeholder hero art -->
+            <div class="text-center">
+              <div class="text-7xl">🐑🎩</div>
+              <div class="mt-2">$SWIF Sample Art</div>
+            </div>
+          </div>
+          <div class="mt-4 grid grid-cols-3 gap-3 text-sm text-slate-300">
+            <div class="rounded-xl border border-slate-800 p-3 glass">
+              <div class="text-xs text-slate-400">Chain</div>
+              <div>Solana</div>
+            </div>
+            <div class="rounded-xl border border-slate-800 p-3 glass">
+              <div class="text-xs text-slate-400">Tax</div>
+              <div>0%</div>
+            </div>
+            <div class="rounded-xl border border-slate-800 p-3 glass">
+              <div class="text-xs text-slate-400">Liquidity</div>
+              <div>Locked</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to buy -->
+  <section id="how" class="mx-auto max-w-7xl px-6 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold">How to buy</h2>
+    <ol class="mt-6 grid md:grid-cols-3 gap-6 text-slate-300">
+      <li class="rounded-2xl p-6 border border-slate-800 glass">
+        <div class="text-slate-400 text-sm">Step 1</div>
+        <h3 class="font-semibold mt-1">Create/Use a Solana wallet</h3>
+        <p class="mt-2">Use Phantom or Backpack. Keep your seed phrase offline.</p>
+      </li>
+      <li class="rounded-2xl p-6 border border-slate-800 glass">
+        <div class="text-slate-400 text-sm">Step 2</div>
+        <h3 class="font-semibold mt-1">Get SOL</h3>
+        <p class="mt-2">Buy SOL on a CEX or on-ramp, then fund your wallet.</p>
+      </li>
+      <li class="rounded-2xl p-6 border border-slate-800 glass">
+        <div class="text-slate-400 text-sm">Step 3</div>
+        <h3 class="font-semibold mt-1">Swap for $SWIF</h3>
+        <p class="mt-2">Use Jupiter Aggregator and paste our contract address.</p>
+      </li>
+    </ol>
+    <div class="mt-6">
+      <a id="tradeJup2" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-[var(--brand)] hover:opacity-90">
+        <span>Trade on Jupiter</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Live Chart -->
+  <section id="chart" class="mx-auto max-w-7xl px-6 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold">Live chart</h2>
+    <p class="text-slate-300 mt-2">Embedded from DexScreener. If the chart doesn't load, open it directly below.</p>
+    <div class="mt-4 rounded-2xl overflow-hidden border border-slate-800">
+      <!-- Replace PAIR and CHAIN as needed -->
+      <iframe id="dexFrame" src="https://dexscreener.com/solana/PAIR_HERE?embed=1&theme=dark" class="w-full" style="height:72vh" loading="lazy"></iframe>
+    </div>
+    <div class="mt-3 text-sm text-slate-400">
+      <a id="dexDirect" target="_blank" class="underline">Open on DexScreener</a>
+      <span class="mx-2">•</span>
+      <a id="birdeyeDirect" target="_blank" class="underline">Open on Birdeye</a>
+    </div>
+  </section>
+
+  <!-- Tokenomics -->
+  <section id="tokenomics" class="mx-auto max-w-7xl px-6 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold">Tokenomics</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl p-6 border border-slate-800 glass space-y-3">
+        <div class="flex justify-between"><span>Supply</span><span id="supply">1,000,000,000</span></div>
+        <div class="flex justify-between"><span>Taxes</span><span>0% / 0%</span></div>
+        <div class="flex justify-between"><span>LP</span><span>Burned/Locked</span></div>
+        <div class="flex justify-between"><span>Renounced</span><span>Yes</span></div>
+      </div>
+      <div class="rounded-2xl p-6 border border-slate-800 glass">
+        <h3 class="font-semibold">Distribution (example)</h3>
+        <ul class="mt-3 list-disc list-inside text-slate-300 space-y-1">
+          <li>95% — Liquidity</li>
+          <li>5% — CEX/Marketing</li>
+        </ul>
+        <p class="text-xs text-slate-400 mt-3">Update these numbers to your real distribution.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team / Promo Member -->
+  <section id="team" class="mx-auto max-w-7xl px-6 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold">Team & Promo</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl p-6 border border-slate-800 glass">
+        <h3 class="font-semibold">Promotional Lead</h3>
+        <div class="mt-3 flex items-center gap-4">
+          <div class="h-16 w-16 rounded-2xl bg-slate-800 flex items-center justify-center text-2xl">🧢</div>
+          <div>
+            <div class="font-semibold">@yourPromoter</div>
+            <div class="text-sm text-slate-400">KOL / Community Builder</div>
+          </div>
+        </div>
+        <p class="text-slate-300 mt-3">Short blurb about your promotional member, expectations, and comms cadence. Avoid promises.</p>
+      </div>
+      <div class="rounded-2xl p-6 border border-slate-800 glass">
+        <h3 class="font-semibold">Security Notes</h3>
+        <ul class="mt-3 list-disc list-inside text-slate-300 space-y-1">
+          <li>Contract renounced ✔️</li>
+          <li>LP tokens burned/locked 🔥</li>
+          <li>Multi-sig for any remaining funds 🔐</li>
+        </ul>
+        <p class="text-xs text-slate-400 mt-3">Always verify on-chain. This site is informational only.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="mx-auto max-w-7xl px-6 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold">FAQ</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <details class="rounded-2xl p-6 border border-slate-800 glass">
+        <summary class="font-semibold cursor-pointer">Is this financial advice?</summary>
+        <p class="text-slate-300 mt-3">No. Meme coins are volatile. Never invest more than you can afford to lose.</p>
+      </details>
+      <details class="rounded-2xl p-6 border border-slate-800 glass">
+        <summary class="font-semibold cursor-pointer">Where can I trade?</summary>
+        <p class="text-slate-300 mt-3">Use the Jupiter link above or your preferred DEX. Always verify the contract address.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800">
+    <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-slate-400">
+      <div>© <span id="year"></span> $SWIF (Sample). All rights reserved.</div>
+      <p class="mt-2">This website is for informational and entertainment purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities or tokens. Verify all information on-chain. DYOR.</p>
+    </div>
+  </footer>
+
+  <script>
+    // === QUICK CONFIG ===
+    const TOKEN_ADDRESS = '9hdynudAhhWzuNFAnpz7NjvdKMfh9z8mcZKNYHuAUgJQ';
+    const DEX_PAIR = 'PAIR_HERE'; // e.g. "9rJ..." from your DexScreener URL
+    const X_HANDLE = 'yourXhandle';
+    const TELEGRAM = 'https://t.me/yourTelegram';
+
+    // Links (edit to taste)
+    const jupiterUrl = `https://jup.ag/swap/SOL-${TOKEN_ADDRESS}`;
+    const birdeyeUrl = `https://birdeye.so/token/${TOKEN_ADDRESS}?chain=solana`;
+    const dexsUrl = `https://dexscreener.com/solana/${DEX_PAIR}`;
+
+    // Wire up UI
+    document.getElementById('contract').textContent = TOKEN_ADDRESS;
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(TOKEN_ADDRESS); alert('Copied!'); } catch {}
+    });
+
+    document.getElementById('tradeJup').href = jupiterUrl;
+    document.getElementById('tradeJup2').href = jupiterUrl;
+    document.getElementById('xLink').href = `https://x.com/${X_HANDLE}`;
+    document.getElementById('tgLink').href = TELEGRAM;
+    document.getElementById('birdeyeLink').href = birdeyeUrl;
+    document.getElementById('dexscreenerLink').href = dexsUrl;
+
+    document.getElementById('dexFrame').src = `${dexsUrl}?embed=1&theme=dark`;
+    document.getElementById('dexDirect').href = dexsUrl;
+    document.getElementById('birdeyeDirect').href = birdeyeUrl;
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Optional: simple privacy-friendly analytics (Plausible) -->
+  <!-- <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script> -->
+</body>
+</html>
